@@ -1,0 +1,15 @@
+a=input("输入")
+b=a.split(" ")
+n=int(b[0])
+m=int(b[1])
+if n<m:
+    t=n
+    n=m
+    m=t
+p=n*m
+while m!=0:
+    r=n%m
+    n=m
+    m=r
+s=int(p/n)
+print(s)

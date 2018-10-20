@@ -1,0 +1,22 @@
+days=[31,28,31,30,31,30,31,31,30,31,30,31]
+a=input().split(" ")
+year=int(a[0])
+month=int(a[1])
+day=int(a[2])
+num=int(a[3])
+if ((year % 4 == 0 and year % 100!=0) or (year % 400 == 0)):
+    days[1]=29
+else:
+    days[1]=28
+day+=num
+while day>days[month-1]:
+    day-=days[month-1]
+    month+=1
+    if month>12:
+        month=1;
+        year+=1
+        if ((year % 4 == 0 and year % 100!=0) or (year % 400 == 0)):
+            days[1] = 29
+        else:
+            days[1] = 28
+print(year,month,day)
